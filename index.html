@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Birthday Message</title>
+</head>
+<body>
+    <div class="container">
+        <!-- Static Birthday Message -->
+        <h1 class="birthday-title">Happy Birthday Meethi!</h1>
+        
+        <!-- Dropdown Section -->
+        <div class="dropdown">
+            <button onclick="toggleDropdown()" class="dropbtn">&#9660;</button> 
+            <div id="myDropdown" class="dropdown-content">
+                <p id="message">
+              hey babeee so you 17 now huh? neh you still like 5 feet and 4 inches tall? lololololololololololololololololol
+              okAYYY JOKES ASIDE,you are so special to me i loveeeee you so much and i just want to tell you 
+              that you are the third best thing that has ever happened to me (first is omniscient readder viewpoint and 2nd is aot)
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Balloon Animation Section -->
+    <div class="balloon-animation" id="balloon-container"></div>
+
+
+    <script src="dropdown.js"></script>
+    <script src="slideshow.js"></script>
+</body>
+</html>
+
+
+<!-- Hexagon Image Section -->
+<div class="hexagon-container">
+  <div class="hexagon"><img src="photos\img1.jpg" alt="Image 1"></div>
+  <div class="hexagon"><img src="photos\img2.jpg" alt="Image 2"></div>
+  <div class="hexagon"><img src="photos\img3.jpg" alt="Image 3"></div>
+  <div class="hexagon"><img src="photos\img4.jpg" alt="Image 4"></div>
+  <div class="hexagon"><img src="photos\img5.jpg" alt="Image 5"></div>
+  <div class="hexagon"><img src="photos\img6.jpg" alt="Image 6"></div>
+</div>
+<div class="ping-pong-game" id="ping-pong-game">
+    <canvas id="gameCanvas" width="400" height="300"></canvas>
+</div>
+<script src="pingpong.js"></script>
+<div class="notes-section">
+    <h2>Leave a Note</h2>
+    <textarea id="noteInput" rows="4" cols="50" placeholder="Write your note here..."></textarea><br>
+    <button id="submitNote">Submit Note</button>
+    <h3>Notes:</h3>
+    <ul id="notesList"></ul>
+</div>
+<script src="note.js"></script>

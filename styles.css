@@ -1,0 +1,204 @@
+html, body {
+    height: 100vh; 
+    margin: 0; 
+    background-color: #d5c5ae;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: 'Playfair Display', serif;
+}
+body {
+    text-align: center;
+    overflow: hidden; 
+}
+.container {
+    margin: 20px;
+    position: relative;
+    z-index: 2;
+    background-color: #ffcccc;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border-style: double;
+}
+.birthday-title {
+    font-size: 48px; 
+    color: #312229; 
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
+    margin: 20px 0; 
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropbtn {
+    background-color: transparent; 
+    color: #312229; 
+    border: none; 
+    cursor: pointer; 
+    font-size: 24px; 
+    padding: 10px; 
+    transition: color 0.3s; 
+}
+
+.dropbtn:hover {
+    color: #47596f; 
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #47596f;
+    min-width: 400px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 10px;
+    padding: 20px;
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    line-height: 1.5;
+    text-align: justify;
+    animation: rollout 0.5s;
+    border-style: double;
+}
+
+.dropdown-content p {
+    margin: 20px 30px;
+    color: #312229;
+    text-indent: 20px;
+}
+
+.dropdown-content.show {
+    display: block;
+    animation: rollout 0.5s;
+}
+
+@keyframes rollout {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.balloon-animation {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 200px; 
+    overflow: hidden;
+    pointer-events: none; 
+}
+.balloon {
+    width: 100px; 
+    height: 100px; 
+    border-radius: 50%; 
+    position: absolute;
+    bottom: 0;
+    animation: float 5s infinite; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+}
+
+.balloon:after {
+    content: '';
+    position: absolute;
+    bottom: -20px; 
+    left: 50%; 
+    width: 2px; 
+    height: 40px; 
+    background-color: #312229; 
+    transform: translateX(-50%); 
+}
+
+.balloon.red { background-color: #312229; }
+.balloon.blue { background-color: #47596f; }
+.balloon.green { background-color: #b18653; }
+.balloon.yellow { background-color: #ffcccc; }
+.balloon.pink { background-color: #54101d; }
+
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0); }
+}
+
+.hexagon-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 20px 0;
+    transition: opacity 0.3s;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    background-color: #ffcccc;
+    padding: 10px;
+    border-style: double;
+}
+
+.hexagon {
+    position: relative;
+    width: 100px; 
+    height: 100px; 
+    margin: 5px; 
+    background-color:#54101d ; 
+    
+    overflow: hidden;
+    transition: opacity 0.3s;
+    border-radius: 0;
+    box-shadow: none;
+}
+.hexagon img {
+    width: 100%; 
+    height: 100%; 
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% , -50%);
+    border-radius: 10px;
+    transition: opacity 0.3s;
+    filter: none;
+    object-fit: cover;
+}
+
+.hexagon img:hover {
+    opacity: 0.5;
+}
+    
+.hexagon-container:hover .hexagon {
+    opacity: 0.5;
+}
+
+.hexagon-container:hover .hexagon:hover {
+    opacity: 1;
+}
+
+
+.ping-pong-game {
+    text-align: center;
+    margin: 20px;
+}
+
+#gameCanvas {
+    border: 2px solid #312229;
+    background-color: #ffcccc;
+}
+.notes-section {
+    margin: 20px;
+    padding: 20px;
+    background-color: #ffcccc;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+#noteInput {
+    width: 100%;
+    margin-bottom: 10px;
+}
