@@ -1,4 +1,3 @@
-
 const canvas = document.getElementById("gameCanvas");
 const ctx = canvas.getContext("2d");
 
@@ -12,12 +11,24 @@ let dx = 2;
 let dy = -2;
 let gameOver = false;
 
+let touchX = null;
+
 document.addEventListener("mousemove", mouseMoveHandler, false);
+document.addEventListener("touchmove", touchMoveHandler, false);
 
 function mouseMoveHandler(e) {
     const relativeX = e.clientX - canvas.getBoundingClientRect().left;
     if (relativeX > 0 && relativeX < canvas.width) {
         paddleX = relativeX - paddleWidth / 2;
+    }
+}
+
+function touchMoveHandler(e) {
+    if (e.touches.length > 0) {
+        touchX = e.touches[0].clientX - canvas.getBoundingClientRect().left;
+        if (touchX > 0 && touchX < canvas.width) {
+            paddleX = touchX - paddleWidth / 2;
+        }
     }
 }
 
@@ -69,12 +80,14 @@ function draw() {
         ctx.textBaseline = "middle";
         ctx.fillText("Game Over. Click to restart.", canvas.width / 2, canvas.height / 2);
         canvas.addEventListener("click", restartGame, false);
+        canvas.addEventListener("touchstart", restartGame, false);
     }
 }
 
 function restartGame() {
     gameOver = false;
     canvas.removeEventListener("click", restartGame, false);
+    canvas.removeEventListener("touchstart", restartGame, false);
 }
 
 setInterval(draw, 10);
